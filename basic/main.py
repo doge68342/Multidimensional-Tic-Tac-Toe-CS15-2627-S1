@@ -21,3 +21,51 @@ grid_4 = [
     ["X", "O", "O"],
     ["O", "X", "X"]
 ]
+
+
+
+
+def determine_winner(grid):
+    for i in grid:
+        if i[0] == i[1] == i[2]:
+            return i[0]
+        
+    for i in range(len(grid)):
+        if grid[0][i] == grid[1][i] == grid[2][i]:
+            return grid[0][i]
+
+    if grid[0][0] == grid[1][1] == grid[2][2]:
+        return grid[0][0]
+
+    if grid[2][0] == grid[1][1] == grid[0][2]:
+        return grid[2][0]
+
+
+def display_list(list):
+    for i, item in enumerate(list):
+        print(f"{item[0]} | {item[1]} | {item[2]}")
+        if i != len(list) - 1:
+            print("---------")
+
+
+
+
+print("Board 1: ")
+display_list(grid_1)
+print("winner:", determine_winner(grid_1))
+print("")
+
+print("Board 2: ")
+display_list(grid_2)
+print("winner:", determine_winner(grid_2))
+print("")
+
+print("Board 3: ")
+display_list(grid_3)
+print("winner:", determine_winner(grid_3))
+print("")
+
+print("Board 4: ")
+display_list(grid_4)
+print("winner:", determine_winner(grid_4))
+print("")

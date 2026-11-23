@@ -22,12 +22,12 @@ basic/
 
 ## Basic Requirements
 
-* [ ] Use the provided Tic-Tac-Toe boards as **3×3 2D lists**, with each inner list representing one row.
-* [ ] Create a function named `display_grid(grid)` that accepts a 2D list as a parameter and displays its values as a clear Tic-Tac-Toe board.
-* [ ] The values displayed by `display_grid()` must come from the 2D list using row and column positions rather than having `X` and `O` characters hardcoded into the display.
-* [ ] Create a function named `determine_winner(grid)` that accepts a 2D list and checks the three rows, three columns, and two diagonals for a winner.
-* [ ] `determine_winner()` must correctly identify whether `X` won, `O` won, or the game ended in a tie.
-* [ ] Use both functions with **every provided grid** so that each board is displayed and its result is clearly shown.
+* [x] Use the provided Tic-Tac-Toe boards as **3×3 2D lists**, with each inner list representing one row.
+* [x] Create a function named `display_grid(grid)` that accepts a 2D list as a parameter and displays its values as a clear Tic-Tac-Toe board.
+* [x] The values displayed by `display_grid()` must come from the 2D list using row and column positions rather than having `X` and `O` characters hardcoded into the display.
+* [x] Create a function named `determine_winner(grid)` that accepts a 2D list and checks the three rows, three columns, and two diagonals for a winner.
+* [x] `determine_winner()` must correctly identify whether `X` won, `O` won, or the game ended in a tie.
+* [x] Use both functions with **every provided grid** so that each board is displayed and its result is clearly shown.
 
 A displayed board could look similar to:
 
