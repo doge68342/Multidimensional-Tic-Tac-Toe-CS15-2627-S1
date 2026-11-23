@@ -47,6 +47,13 @@ def determine_winner(grid):
             if grid[2][0] != " ":
                 return grid[2][0]
 
+    tie = True
+    for i in grid:
+        if " " in i:
+            tie = False
+    if tie:
+        return "Tie"
+
 
 def display_grid(grid):
     for i, item in enumerate(grid):
@@ -55,9 +62,8 @@ def display_grid(grid):
             print("---------")
 
 turn = random.choice(["X", "O"])
+display_grid(board)
 while True:
-    display_grid(board)
-
     print(f"Turn: {turn}")
     while True: 
         row = get_user_input("Row: ", "int", 2)
@@ -68,15 +74,12 @@ while True:
         else:
             print("That place on the board is taken silly")
 
-    if determine_winner(board) != None:
+    display_grid(board)
+
+    if determine_winner(board) == "X" or determine_winner(board) == "O":
         print(f"{determine_winner(board)} is the winner, game over")
         break
-
-    tie = True
-    for i in board:
-        if " " in i:
-            tie = False
-    if tie:
+    elif determine_winner(board) == "Tie":
         print("Board full, game over as a tie")
         break
 

@@ -22,25 +22,31 @@ grid_4 = [
     ["O", "X", "X"]
 ]
 
-
-
-
 def determine_winner(grid):
     for i in grid:
         if i[0] == i[1] == i[2]:
-            return i[0]
+            if i[0] != " ":
+                return i[0]
         
     for i in range(len(grid)):
         if grid[0][i] == grid[1][i] == grid[2][i]:
-            return grid[0][i]
+            if grid[0][i] != " ":
+                return grid[0][i]
 
     if grid[0][0] == grid[1][1] == grid[2][2]:
-        return grid[0][0]
+            if grid[0][0] != " ":
+                return grid[0][0]
 
     if grid[2][0] == grid[1][1] == grid[0][2]:
-        return grid[2][0]
+            if grid[2][0] != " ":
+                return grid[2][0]
 
-    return "Tie"
+    tie = True
+    for i in grid:
+        if " " in i:
+            tie = False
+    if tie:
+        return "Tie"
 
 
 def display_grid(grid):
