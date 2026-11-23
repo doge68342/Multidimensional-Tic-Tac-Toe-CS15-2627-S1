@@ -12,7 +12,7 @@ def get_user_input(prompt, data_type, max):
     elif data_type == "int":
         try:
             output = int(input(prompt))
-            if output <= max or max == 0:
+            if 0 <= output <= max or max == 0:
                 return output
             else:
                 print(f"Please input an integer between 0 and {max}")
@@ -48,15 +48,15 @@ def determine_winner(grid):
                 return grid[2][0]
 
 
-def display_list(list):
-    for i, item in enumerate(list):
+def display_grid(grid):
+    for i, item in enumerate(grid):
         print(f"{item[0]} | {item[1]} | {item[2]}")
-        if i != len(list) - 1:
+        if i != len(grid) - 1:
             print("---------")
 
 turn = random.choice(["X", "O"])
 while True:
-    display_list(board)
+    display_grid(board)
 
     print(f"Turn: {turn}")
     while True: 
@@ -72,6 +72,13 @@ while True:
         print(f"{determine_winner(board)} is the winner, game over")
         break
 
+    tie = True
+    for i in board:
+        if " " in i:
+            tie = False
+    if tie:
+        print("Board full, game over as a tie")
+        break
 
     if turn == "X":
         turn = "O"

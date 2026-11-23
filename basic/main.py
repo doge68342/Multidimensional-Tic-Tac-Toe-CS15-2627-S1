@@ -40,32 +40,34 @@ def determine_winner(grid):
     if grid[2][0] == grid[1][1] == grid[0][2]:
         return grid[2][0]
 
+    return "Tie"
 
-def display_list(list):
-    for i, item in enumerate(list):
+
+def display_grid(grid):
+    for i, item in enumerate(grid):
         print(f"{item[0]} | {item[1]} | {item[2]}")
-        if i != len(list) - 1:
+        if i != len(grid) - 1:
             print("---------")
 
 
 
 
 print("Board 1: ")
-display_list(grid_1)
+display_grid(grid_1)
 print("winner:", determine_winner(grid_1))
 print("")
 
 print("Board 2: ")
-display_list(grid_2)
+display_grid(grid_2)
 print("winner:", determine_winner(grid_2))
 print("")
 
 print("Board 3: ")
-display_list(grid_3)
+display_grid(grid_3)
 print("winner:", determine_winner(grid_3))
 print("")
 
 print("Board 4: ")
-display_list(grid_4)
+display_grid(grid_4)
 print("winner:", determine_winner(grid_4))
 print("")
